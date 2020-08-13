@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <title>
+        <%= title%>
+    </title>
+</head>
+
+<body>
+    <h1>Photos</h1>
+    <p>Express stock photo application.</p>
+    <div id="photos">
+        <% photos.forEach(function(photo) { %>
+            <div class="photo">
+                <h2>
+                    <%=photo.name%>
+                </h2>
+                <a href='/photo/<%=photo.id%>/download'>
+                <img src='/photos/<%=photo.path%>' />
+            </a>
+            </div>
+            <% }) %>
+    </div>
+</body>
+
+</html>
